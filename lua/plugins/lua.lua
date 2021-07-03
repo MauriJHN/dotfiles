@@ -1,0 +1,31 @@
+return require('packer').startup(function()
+
+    use 'wbthomason/packer.nvim'
+
+	-- use 'phanviet/vim-monokai-pro'
+	-- use 'sainnhe/gruvbox-material'
+	use 'gruvbox-community/gruvbox'
+	-- use 'lifepillar/vim-solarized8'
+	-- use 'glepnir/oceanic-material'
+	-- use 'tyrannicaltoucan/vim-deep-space'
+	use 'arcticicestudio/nord-vim'
+
+	-- EDITING PLUGINS
+	-- use 'sbdchd/neoformat'
+	-- use 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+	-- use 'dense-analysis/ale'
+	use 'preservim/nerdtree'
+	use 'ryanoasis/vim-devicons'
+	use 'airblade/vim-gitgutter'
+	use 'tpope/vim-fugitive'
+	use 'editorconfig/editorconfig-vim'
+    use 'nvim-treesitter/nvim-treesitter'
+
+    -- LANGUAGE SERVER
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/nvim-compe'
+
+    -- UI PLUGINS
+	use 'vim-airline/vim-airline'
+	use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
+end)
