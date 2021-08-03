@@ -55,5 +55,5 @@ map("n", "<leader>co", [[<Cmd>cope<CR>]], opt)
 map("n", "<leader>cc", [[<Cmd>ccl<CR>]], opt)
 
 -- FUZZY FINDER -- 
-map("n", "<leader><space>", [[<Cmd>FZF<CR>]], opt)
+map("n", "<leader><leader>", [[<Cmd>FZF<CR>]], opt)
 

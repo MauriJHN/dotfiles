@@ -9,17 +9,20 @@ return require('packer').startup(function()
 	-- use 'glepnir/oceanic-material'
 	-- use 'tyrannicaltoucan/vim-deep-space'
 	use 'arcticicestudio/nord-vim'
+	use 'dracula/vim' -- , { 'name': 'dracula' }
 
 	-- EDITING PLUGINS
 	-- use 'sbdchd/neoformat'
 	-- use 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-	-- use 'dense-analysis/ale'
+    use 'godlygeek/tabular'
+    use 'plasticboy/vim-markdown'
 	use 'preservim/nerdtree'
 	use 'ryanoasis/vim-devicons'
 	use 'airblade/vim-gitgutter'
 	use 'tpope/vim-fugitive'
 	use 'editorconfig/editorconfig-vim'
     use 'nvim-treesitter/nvim-treesitter'
+    use 'sindrets/diffview.nvim'
 
     -- LANGUAGE SERVER
     use 'neovim/nvim-lspconfig'
