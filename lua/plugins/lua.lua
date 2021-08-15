@@ -18,11 +18,14 @@ return require('packer').startup(function()
     use 'plasticboy/vim-markdown'
 	use 'preservim/nerdtree'
 	use 'ryanoasis/vim-devicons'
-	use 'airblade/vim-gitgutter'
 	use 'tpope/vim-fugitive'
 	use 'editorconfig/editorconfig-vim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'sindrets/diffview.nvim'
+
+    -- GIT --
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+	use 'airblade/vim-gitgutter'
 
     -- LANGUAGE SERVER
     use 'neovim/nvim-lspconfig'

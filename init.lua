@@ -120,3 +120,9 @@ require'diffview'.setup {
     }
   }
 }
+
+-- NEOGIT SETUP --
+
+local neogit = require("neogit")
+neogit.setup {}
+
