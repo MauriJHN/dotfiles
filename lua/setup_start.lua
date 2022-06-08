@@ -1,7 +1,25 @@
+g = vim.g
+
+-- NERDTREE
+g.NERDTreeShowBookmarks = 1
+g.NERDTreeShowHidden = 1
+
+-- NETRW FILE EX
+g.netrw_banner = 0
+g.netrw_winsize = 25
+g.netrw_browse_split = 4
+g.netrw_liststyle = 1
+g.netrw_fastbrowse = 2
+
+-- GRUVBOX
+g.gruvbox_transparent_bg = 1
+
+-- set editor, buffer and window options
 local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
 
 local function opt(scope, key, value)
 	scopes[scope][key] = value
+    -- even if the option is not for the editor, set for the editor
 	if scope ~= "o" then
 		scopes["o"][key] = value
 	end
@@ -22,11 +40,4 @@ opt("b", "expandtab", true)
 opt("b", "shiftwidth", 4)
 opt("b", "tabstop", 4)
 opt("o", "completeopt", "menuone,noselect")
-
-local M = {}
-
-function M.is_buffer_empty()
-	-- Check whether the current buffer is empty
-	return vim.fn.empty(vim.fn.expand("%:t")) == 1
-end
 
