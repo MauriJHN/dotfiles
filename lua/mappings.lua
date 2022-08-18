@@ -65,3 +65,11 @@ map("n", "<leader>cc", [[<Cmd>ccl<CR>]], opts)
 -- FUZZY FINDER -- 
 map("n", "<leader><leader>", [[<Cmd>FZF<CR>]], opts)
 
+-- LSP --
+map("n", "gr", [[<Cmd>lua vim.lsp.buf.references()<CR>]], opts)
+map("n", "gd", [[<Cmd>lua vim.lsp.buf.definition()<CR>]], opts)
+map("n", "<leader>hi", [[<Cmd>lua vim.lsp.buf.hover()<CR>]], opts)
+map("n", "ca", [[<Cmd>lua vim.lsp.buf.code_action()<CR>]], opts)
+map("n", "ff", [[<Cmd>lua vim.lsp.buf.formatting()<CR>]], opts)
+map("n", "<leader>rn", [[<Cmd>lua vim.lsp.buf.rename()<CR>]], opts)
+

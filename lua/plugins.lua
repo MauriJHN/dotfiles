@@ -7,6 +7,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]
+
 return require('packer').startup(function()
 
     use {
@@ -29,7 +36,7 @@ return require('packer').startup(function()
         -- use 'godlygeek/tabular'
         -- use 'plasticboy/vim-markdown'
         'preservim/nerdtree',
-        -- use 'ryanoasis/vim-devicons'
+        'ryanoasis/vim-devicons',
         -- use 'editorconfig/editorconfig-vim'
         -- use 'nvim-treesitter/nvim-treesitter'
         -- use 'sindrets/diffview.nvim'
