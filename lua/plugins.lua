@@ -1,4 +1,4 @@
--- the following snippet makes sure packar is installed before attempting to install plugins
+-- the following snippet makes sure packer is installed before attempting to install plugins
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
@@ -7,12 +7,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
+-- reload packages when this script is updated
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    pattern = { "plugins.lua" },
+    command = "source <afile> | PackerSync"
+})
+
 
 return require('packer').startup(function()
 
@@ -20,15 +20,9 @@ return require('packer').startup(function()
         'wbthomason/packer.nvim',
 
         -- THEMES
-        -- use 'tanvirtin/monokai.nvim'
-        -- use 'phanviet/vim-monokai-pro'
-        -- use 'sainnhe/gruvbox-material'
-        -- use 'gruvbox-community/gruvbox'
-        -- use 'lifepillar/vim-solarized8'
-        -- use 'glepnir/oceanic-material'
-        -- use 'tyrannicaltoucan/vim-deep-space'
-        -- use 'arcticicestudio/nord-vim'
-        'dracula/vim',
+        -- 'dracula/vim',
+        -- 'ayu-theme/ayu-vim',
+        'arcticicestudio/nord-vim',
 
         -- EDITING
         -- use 'sbdchd/neoformat'

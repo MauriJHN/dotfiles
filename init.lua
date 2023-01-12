@@ -1,5 +1,5 @@
+require "plugins"
 require "setup_start"
 require "lsp_config"
 require "mappings"
-require "plugins"
 require "setup_end"
