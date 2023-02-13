@@ -4,8 +4,9 @@ g = vim.g
 -- GLOBAL VARIABLES
 
 -- NERDTREE
-g.NERDTreeShowBookmarks = 1
+-- g.NERDTreeShowBookmarks = 1
 g.NERDTreeShowHidden = 1
+g.NERDTreeMinimalMenu = 1
 
 -- NETRW FILE EX
 g.netrw_banner = 0
@@ -15,6 +16,8 @@ g.netrw_browse_split = 4
 g.netrw_liststyle = 1
 -- for efficient browsing, see :h g:netrw_fastbrowse for a detailed info
 g.netrw_fastbrowse = 2
+
+-- g.deoplete#enable_at_startup = 1
 
 -- set editor, buffer and window options
 -- vim.o: editor scope

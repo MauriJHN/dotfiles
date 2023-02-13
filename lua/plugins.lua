@@ -10,7 +10,7 @@ end
 -- reload packages when this script is updated
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     pattern = { "plugins.lua" },
-    command = "source <afile> | PackerSync"
+    command = "source % | PackerSync"
 })
 
 
@@ -25,15 +25,14 @@ return require('packer').startup(function()
         'arcticicestudio/nord-vim',
 
         -- EDITING
-        -- use 'sbdchd/neoformat'
-        -- use 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-        -- use 'godlygeek/tabular'
-        -- use 'plasticboy/vim-markdown'
+        -- 'sbdchd/neoformat',
+        'godlygeek/tabular',
         'preservim/nerdtree',
         'ryanoasis/vim-devicons',
-        -- use 'editorconfig/editorconfig-vim'
-        -- use 'nvim-treesitter/nvim-treesitter'
-        -- use 'sindrets/diffview.nvim'
+        'simrat39/symbols-outline.nvim',
+        'editorconfig/editorconfig-vim',
+        -- 'nvim-treesitter/nvim-treesitter'
+        -- 'sindrets/diffview.nvim'
 
         -- GIT --
         { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' },
@@ -49,9 +48,16 @@ return require('packer').startup(function()
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
+        { 'Shougo/deoplete.nvim', run = function() vim.cmd(':UpdateRemotePlugins') end },
 
         -- UI PLUGINS
+        -- Fuzzy Finder (files, lsp, etc)
+        { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } },
+
+        -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 },
+
         'vim-airline/vim-airline',
-        { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
+        -- { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
     }
 end)
