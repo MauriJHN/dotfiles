@@ -42,12 +42,14 @@ return require('packer').startup(function()
         -- LANGUAGE SERVER
         'neovim/nvim-lspconfig',
         'williamboman/nvim-lsp-installer',
-        'hrsh7th/nvim-cmp',
+        { 'hrsh7th/nvim-cmp', requires = 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+        'lewis6991/gitsigns.nvim',
         'hrsh7th/cmp-vsnip',
         'hrsh7th/vim-vsnip',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
+        'hrsh7th/cmp-nvim-lsp',
         { 'Shougo/deoplete.nvim', run = function() vim.cmd(':UpdateRemotePlugins') end },
 
         -- UI PLUGINS
