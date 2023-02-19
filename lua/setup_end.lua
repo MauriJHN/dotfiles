@@ -22,4 +22,10 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     command = "lua vim.lsp.buf.formatting_sync(nil, 100)"
 })
 
-vim.cmd "colo nord"
+-- format python files when writing to them
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+    pattern = { "*" },
+    command = "call system('/mnt/c/windows/system32/clip.exe ',@\")"
+})
+
+vim.cmd "colo dracula"

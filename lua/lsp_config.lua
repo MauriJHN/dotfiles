@@ -7,18 +7,35 @@ lspconfig.pyright.setup{
     root_dir = function()
         return vim.fn.getcwd()
     end,
-    files = { "python" },
-    pyright = {
-        analysis = {
-            autoSearchPaths = true,
-            diagnosticMode = "workspace",
-            useLibraryCodeForTypes = true,
-            -- venvPath = vim.fn.getcwd() .. "venv/"
-            venvPath = "venv"
-        }
-    },
-    single_file_support = true
+    filetypes = { "python" },
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = "workspace",
+                useLibraryCodeForTypes = true,
+                venvPath = function()
+                    return "./venv/"
+                end,
+                venv = "venv"
+            }
+        },
+        single_file_support = true
+    }
 }
+
+lspconfig.volar.setup{
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}
+
+-- lspconfig.sumneko_lua.setup{
+--     Lua = {
+--         completion = "autoRequire"
+--     }
+-- }
+
+-- NOTE: to install lua_ls follow the build guide and add to PATH: https://github.com/LuaLS/lua-language-server/wiki/Getting-Started#build
+lspconfig.lua_ls.setup {}
 
 cmp.setup({
     snippet = {

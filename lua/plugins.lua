@@ -20,7 +20,7 @@ return require('packer').startup(function()
         'wbthomason/packer.nvim',
 
         -- THEMES
-        -- 'dracula/vim',
+        'dracula/vim',
         -- 'ayu-theme/ayu-vim',
         'arcticicestudio/nord-vim',
 

@@ -98,11 +98,6 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- LSP --
-map("n", "gr", [[<Cmd>lua vim.lsp.buf.references()<CR>]], opts)
-map("n", "ca", [[<Cmd>lua vim.lsp.buf.code_action()<CR>]], opts)
-map("n", "ff", [[<Cmd>lua vim.lsp.buf.format_sync()<CR>]], opts)
-map("n", "<leader>rn", [[<Cmd>lua vim.lsp.buf.rename()<CR>]], opts)
-
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -142,7 +137,13 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
+local lspconfig = require('lspconfig')
+local servers = { "pyright", "volar", "lua_ls" }
+
+for k,server in ipairs(servers) do
+    print("adding mappings to server: " .. server)
+    lspconfig[server].setup{
+        on_attach = on_attach,
+        flags = lsp_flags,
+    }
+end
