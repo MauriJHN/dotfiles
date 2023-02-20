@@ -138,12 +138,17 @@ local lsp_flags = {
 }
 
 local lspconfig = require('lspconfig')
-local servers = { "pyright", "volar", "lua_ls" }
+local servers = { "pyright", "volar", "lua_ls", "tsserver", "html" }
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- to load vs code snippets: https://github.com/L3MON4D3/LuaSnip#add-snippets
+require("luasnip.loaders.from_vscode").lazy_load()
 
 for k,server in ipairs(servers) do
-    print("adding mappings to server: " .. server)
+    -- NOTE: uncomment to see which server is causing issues
+    -- print("adding mappings to server: " .. server)
     lspconfig[server].setup{
         on_attach = on_attach,
+        capabilities = capabilities,
         flags = lsp_flags,
     }
 end

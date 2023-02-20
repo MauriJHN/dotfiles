@@ -23,6 +23,7 @@ return require('packer').startup(function()
         'dracula/vim',
         -- 'ayu-theme/ayu-vim',
         'arcticicestudio/nord-vim',
+        'overcache/NeoSolarized',
 
         -- EDITING
         -- 'sbdchd/neoformat',
@@ -50,6 +51,7 @@ return require('packer').startup(function()
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         'hrsh7th/cmp-nvim-lsp',
+        'rafamadriz/friendly-snippets',
         { 'Shougo/deoplete.nvim', run = function() vim.cmd(':UpdateRemotePlugins') end },
 
         -- UI PLUGINS

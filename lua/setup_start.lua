@@ -53,5 +53,4 @@ opt("b", "smartindent", true)
 -- opt("o", "completeopt", "menuone,noselect")
 -- settings for vim-devicons
 opt("o", "encoding", "utf8")
-opt("o", "guifont", "ShureTechMono Nerd Font:h13")
 
