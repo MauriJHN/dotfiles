@@ -32,6 +32,7 @@ return require('packer').startup(function()
         'ryanoasis/vim-devicons',
         'simrat39/symbols-outline.nvim',
         'editorconfig/editorconfig-vim',
+        'folke/zen-mode.nvim',
         -- 'nvim-treesitter/nvim-treesitter'
         -- 'sindrets/diffview.nvim'
 
