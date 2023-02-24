@@ -22,10 +22,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     command = "lua vim.lsp.buf.formatting_sync(nil, 100)"
 })
 
--- format python files when writing to them
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-    pattern = { "*" },
-    command = "call system('/mnt/c/windows/system32/clip.exe ',@\")"
-})
+-- use the windows clipboard when yanking to * registry ONLY in wsl
+if vim.fn.has("wsl") then
+    vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+        pattern = { "*" },
+        command = "call system('/mnt/c/windows/system32/clip.exe ',@\")"
+    })
+end
 
 vim.cmd "colo neosolarized"

@@ -45,15 +45,14 @@ map('n', '<leader>tv', [[<Cmd>vsplit term://zsh<CR>]], opts)
 
 -- NETRW NAV --
 map('n', '<leader>pv', [[<Cmd>Sex!<CR>]], opts)
-
 -- EDITING --
-map('n', '<leader>y', '\'*y', opts)
-map('n', '<leader>p', '\'*p', opts)
-map('n', '<leader>Y', 'gg\'*yG', opts)
+map('n', '<leader>y', '"*y', opts)
+map('n', '<leader>p', '"*p', opts)
+map('n', '<leader>Y', 'gg"*yG', opts)
 map('n', '<leader>sc', [[<Cmd>let @/=''<CR>]], opts)
 map('n', '<leader>ff', ':set foldmethod=indent<CR> :set foldmethod=manual<CR>', opts)
-map('v', '<leader>y', '\'*y', opts)
-map('v', '<leader>p', '\'*p', opts)
+map('v', '<leader>y', '"*y', opts)
+map('v', '<leader>p', '"*p', opts)
 map('n', '<leader>zm', [[<Cmd>ZenMode<CR>]], opts)
 
 -- NERDTREE MAPPINGS
