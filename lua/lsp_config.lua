@@ -32,6 +32,8 @@ lspconfig.volar.setup{
 -- NOTE: to install lua_ls follow the build guide and add to PATH: https://github.com/LuaLS/lua-language-server/wiki/Getting-Started#build
 lspconfig.lua_ls.setup{}
 
+lspconfig.jsonls.setup{}
+
 lspconfig.tsserver.setup{
   compilerOptions = {
     module = "commonjs",
@@ -46,8 +48,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lspconfig.html.setup {
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
   capabilities = capabilities,
 }
+
+lspconfig.cssls.setup{}
 
 cmp.setup({
     snippet = {

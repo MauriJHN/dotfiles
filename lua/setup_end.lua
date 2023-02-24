@@ -28,4 +28,4 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
     command = "call system('/mnt/c/windows/system32/clip.exe ',@\")"
 })
 
-vim.cmd "colo dracula"
+vim.cmd "colo neosolarized"
