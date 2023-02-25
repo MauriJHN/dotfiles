@@ -34,6 +34,14 @@ lspconfig.lua_ls.setup{}
 
 lspconfig.jsonls.setup{}
 
+lspconfig.grammarly.setup{
+    config = {
+        suggestions = {
+            InformalPronounsAcademic = true
+        }
+    }
+}
+
 lspconfig.tsserver.setup{
   compilerOptions = {
     module = "commonjs",
