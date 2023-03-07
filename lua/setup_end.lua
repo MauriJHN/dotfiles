@@ -17,9 +17,10 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 -- format python files when writing to them
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     pattern = { "*.py" },
-    command = "lua vim.lsp.buf.formatting_sync(nil, 100)"
+    -- command = "lua vim.lsp.buf.formatting_sync(nil, 100)"
+    command = "!python -m black %"
 })
 
 -- use the windows clipboard when yanking to * registry ONLY in wsl
