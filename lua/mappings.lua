@@ -65,6 +65,9 @@ map('n', '<leader>nf', ':NERDTreeFind ', opts)
 map('n', '<leader>co', [[<Cmd>cope<CR>]], opts)
 map('n', '<leader>cc', [[<Cmd>ccl<CR>]], opts)
 
+-- OUTLINE TOGGLE
+map('n', '<leader>out', [[<Cmd>SymbolsOutline<CR>]], opts)
+
 -- FUZZY FINDER -- 
 require('telescope').setup {
   defaults = {
