@@ -63,6 +63,9 @@ lspconfig.html.setup {
 lspconfig.cssls.setup{}
 
 cmp.setup({
+    enabled = function()
+        return vim.g.cmptoggle
+    end,
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
@@ -95,4 +98,9 @@ cmp.setup({
         }
     )
 })
+
+-- TOGGLE CMP
+-- solution in thread: https://github.com/hrsh7th/nvim-cmp/issues/261#issuecomment-1461862723
+vim.keymap.set("n", "<leader>ua", "<Cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", { desc = "toggle nvim-cmp" })
+
 
