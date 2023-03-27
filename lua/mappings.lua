@@ -6,7 +6,7 @@ vim.g.mapleader = ' '
 -- see h :map-commands for explanation of lhs & rhs
 local function map(mode, lhs, rhs, opts)
 	-- noremap means the mapping cannot be overwritten or nested
-	local options = {noremap = true}
+	local options = {noremap = true, nowait = true}
 	if opts then
 		options = vim.tbl_extend('force', options, opts)
 	end
@@ -67,6 +67,17 @@ map('n', '<leader>cc', [[<Cmd>ccl<CR>]], opts)
 
 -- OUTLINE TOGGLE
 map('n', '<leader>out', [[<Cmd>SymbolsOutline<CR>]], opts)
+
+-- EXEC PYTHON
+map('n', '<leader>xx', [[<Cmd>!python3 %<CR>]], opts)
+
+-- TOGGLE CMP
+-- solution in thread: https://github.com/hrsh7th/nvim-cmp/issues/261#issuecomment-1461862723
+map('n', '<leader>ua', [[<Cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle; <CR>]], { desc = 'toggle nvim-cmp' })
+
+--TOGGLE PYTHON FORMATTING
+vim.g.pythonformatting = true
+map('n', '<leader>df', [[<Cmd>lua vim.g.pythonformatting = not vim.g.pythonformatting<CR>]], { desc = 'toggle python-formatting' })
 
 -- FUZZY FINDER -- 
 require('telescope').setup {

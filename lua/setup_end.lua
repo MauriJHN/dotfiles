@@ -20,7 +20,10 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     pattern = { "*.py" },
     -- command = "lua vim.lsp.buf.formatting_sync(nil, 100)"
-    command = "!python -m black %"
+    command = [[lua 
+                if vim.g.pythonformatting then
+                    vim.cmd('!python3 -m black -q %')
+                end]]
 })
 
 -- use the windows clipboard when yanking to * registry ONLY in wsl
