@@ -1,6 +1,0 @@
-require('plugins')
-require('setup_start')
-require('lsp_config')
-require('mappings')
-require('zen_mode')
-require('setup_end')
