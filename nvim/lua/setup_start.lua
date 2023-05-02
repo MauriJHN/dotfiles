@@ -3,54 +3,43 @@ g = vim.g
 
 -- GLOBAL VARIABLES
 
--- NERDTREE
--- g.NERDTreeShowBookmarks = 1
+-- nerdtree
 g.NERDTreeShowHidden = 1
 g.NERDTreeMinimalMenu = 1
 
--- NETRW FILE EX
+-- netrw file ex
 g.netrw_banner = 0
 g.netrw_winsize = 25
 g.netrw_browse_split = 4
--- long listing (one file per line)
-g.netrw_liststyle = 1
--- for efficient browsing, see :h g:netrw_fastbrowse for a detailed info
-g.netrw_fastbrowse = 2
+g.netrw_liststyle = 1 -- long listing (one file per line)
+g.netrw_fastbrowse = 2 -- efficient browsing, see :h g:netrw_fastbrowse
 
--- g.deoplete#enable_at_startup = 1
-
--- set editor, buffer and window options
 -- vim.o: editor scope
 -- vim.bo: buffer scope
 -- vim.wo: window scope
-local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
+local scopes = { o = vim.o, b = vim.bo, w = vim.wo }
+local function set_editor_option(scope, field, value)
+	scopes[scope][field] = value
 
--- this is a helper function used to set mappings for different scopes
-local function opt(scope, key, value)
-	scopes[scope][key] = value
-    -- even if the option is not for the editor, set for the editor
 	if scope ~= "o" then
-		scopes["o"][key] = value
+		scopes["o"][field] = value
 	end
 end
 
-opt("o", "hidden", true)
-opt("o", "ignorecase", true)
-opt("o", "splitbelow", true)
-opt("o", "splitright", true)
-opt("o", "termguicolors", true)
-opt("w", "number", true)
-opt("o", "numberwidth", 2)
-opt("w", "cul", true)
-opt("w", "signcolumn", "yes")
-opt("o", "updatetime", 250)
-opt("o", "timeoutlen", 500)
-opt("b", "expandtab", true)
-opt("b", "shiftwidth", 4)
-opt("b", "tabstop", 4)
-opt("b", "smartindent", true)
--- when completion menu pops up, do not select a match automatically
--- opt("o", "completeopt", "menuone,noselect")
--- settings for vim-devicons
-opt("o", "encoding", "utf8")
-
+set_editor_option("o", "hidden", true)
+set_editor_option("o", "ignorecase", true)
+set_editor_option("o", "splitbelow", true)
+set_editor_option("o", "splitright", true)
+set_editor_option("o", "termguicolors", true)
+set_editor_option("w", "number", true)
+set_editor_option("o", "numberwidth", 2)
+set_editor_option("w", "cul", true)
+set_editor_option("w", "signcolumn", "yes")
+set_editor_option("o", "updatetime", 250)
+set_editor_option("o", "timeoutlen", 500)
+set_editor_option("b", "expandtab", true)
+set_editor_option("b", "shiftwidth", 4)
+set_editor_option("b", "tabstop", 4)
+set_editor_option("b", "smartindent", true)
+set_editor_option("o", "completeopt", "menuone,preview,noselect") -- do not select 
+set_editor_option("o", "encoding", "utf8") -- for vim devicons

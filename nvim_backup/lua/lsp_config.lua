@@ -1,29 +1,6 @@
+-- NOTE: commenting block below to test if nvim-lsp-installer setup overrides behaviour
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')
-
--- NOTE: to install lua_ls follow the build guide and add to PATH: https://github.com/LuaLS/lua-language-server/wiki/Getting-Started#build
-lspconfig.lua_ls.setup{
-	settings = {
-		Lua = {
-			runtime = {
-				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-				version = 'LuaJIT',
-			},
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				globals = { 'vim' },
-			},
-			workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-			-- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-				enable = false,
-			},
-		},
-	}
-}
 
 lspconfig.pyright.setup {
     cmd = { "pyright-langserver", "--stdio" },
@@ -51,9 +28,69 @@ lspconfig.volar.setup {
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
 }
 
+local lua_settings = {
+    Lua = {
+        runtime = {
+            -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+            version = 'LuaJIT',
+        },
+        diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = { 'vim' },
+        },
+        workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file("", true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+            enable = false,
+        },
+    },
+}
+
+-- NOTE: to install lua_ls follow the build guide and add to PATH: https://github.com/LuaLS/lua-language-server/wiki/Getting-Started#build
+lspconfig.lua_ls.setup{
+    settings = lua_settings
+}
+
+-- lspconfig.sumneko_lua.setup{
+--     settings = lua_settings
+-- }
+
+lspconfig.jsonls.setup {}
+
+lspconfig.grammarly.setup {
+    config = {
+        suggestions = {
+            InformalPronounsAcademic = true
+        }
+    }
+}
+
+lspconfig.tsserver.setup {
+    compilerOptions = {
+        module = "commonjs",
+        target = "es6",
+        checkJs = false
+    },
+    exclude = { "node_modules" }
+}
+
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.html.setup {
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+    capabilities = capabilities,
+}
+
+lspconfig.cssls.setup {}
+
 vim.g.cmptoggle = true
 
-cmp.setup{
+cmp.setup({
     enabled = function()
         return vim.g.cmptoggle
     end,
@@ -88,5 +125,4 @@ cmp.setup{
         { name = 'nvim_lsp' }
     }
     )
-}
-
+})

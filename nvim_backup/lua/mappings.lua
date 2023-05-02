@@ -1,7 +1,6 @@
 -- set global mapleader to spacebar
-vim.g.mapleader = " "
 
-local options = {noremap = true, nowait = true}
+vim.g.mapleader = ' '
 
 -- wrapper function to set keymap
 -- see h :map-commands for explanation of lhs & rhs
@@ -17,55 +16,68 @@ end
 
 local opts = {}
 
+-- dont copy any deleted text, this is disabled by default so uncomment the below mappings if you want them!
+--[[ remove this line
+map('n', 'dd', [=[ '_dd ]=], opts)
+map('v', 'dd', [=[ '_dd ]=], opts)
+map('v', 'x', [=[ '_x ]=], opts)
+this line too ]]
+
+-- RELOAD CONFIG
+map('n', '<leader>rr', [[<Cmd>source ~/.config/nvim/init.lua<CR>]], opts)
+
 -- WINDOW NAV --
-vim.keymap.set('n', '<leader>h', "<cmd>wincmd h<cr>", opts)
-vim.keymap.set('n', '<leader>j', [[<cmd>wincmd j<cr>]], opts)
-vim.keymap.set('n', '<leader>k', [[<cmd>wincmd k<cr>]], opts)
-vim.keymap.set('n', '<leader>l', [[<cmd>wincmd l<cr>]], opts)
+map('n', '<leader>h', [[<Cmd>wincmd h<CR>]], opts)
+map('n', '<leader>j', [[<Cmd>wincmd j<CR>]], opts)
+map('n', '<leader>k', [[<Cmd>wincmd k<CR>]], opts)
+map('n', '<leader>l', [[<Cmd>wincmd l<CR>]], opts)
 
 -- BUFFER MANAGEMENT --
-vim.keymap.set('n', '<leader>ss', [[<Cmd>split<CR>]], opts)
-vim.keymap.set('n', '<leader>sv', [[<Cmd>vsplit<CR>]], opts)
+map('n', '<leader>w', [[<Cmd>w<CR>]], opts)
+map('n', '<leader>q', [[<Cmd>q<CR>]], opts)
+map('n', '<leader>a', [[<Cmd>qa<CR>]], opts)
+map('n', '<leader>ss', [[<Cmd>split<CR>]], opts)
+map('n', '<leader>sv', [[<Cmd>vsplit<CR>]], opts)
 
 -- OPEN TERMINALS --
-vim.keymap.set('n', '<leader>tt', [[<Cmd>split term://zsh<CR>]], opts)
-vim.keymap.set('n', '<leader>tv', [[<Cmd>vsplit term://zsh<CR>]], opts)
+map('n', '<leader>tt', [[<Cmd>split term://zsh<CR>]], opts)
+map('n', '<leader>tv', [[<Cmd>vsplit term://zsh<CR>]], opts)
 
 -- NETRW NAV --
-vim.keymap.set('n', '<leader>pv', [[<Cmd>Sex!<CR>]], opts)
+map('n', '<leader>pv', [[<Cmd>Sex!<CR>]], opts)
 -- EDITING --
-vim.keymap.set('n', '<leader>y', '"*y', opts)
-vim.keymap.set('n', '<leader>p', '"*p', opts)
-vim.keymap.set('n', '<leader>Y', 'gg"*yG', opts)
-vim.keymap.set('n', '<leader>sc', [[<Cmd>let @/=''<CR>]], opts)
-vim.keymap.set('n', '<leader>ff', ':set foldmethod=indent<CR> :set foldmethod=manual<CR>', opts)
-vim.keymap.set('v', '<leader>y', '"*y', opts)
-vim.keymap.set('v', '<leader>p', '"*p', opts)
-vim.keymap.set('n', '<leader>zm', [[<Cmd>ZenMode<CR>]], opts)
+map('n', '<leader>y', '"*y', opts)
+map('n', '<leader>p', '"*p', opts)
+map('n', '<leader>Y', 'gg"*yG', opts)
+map('n', '<leader>sc', [[<Cmd>let @/=''<CR>]], opts)
+map('n', '<leader>ff', ':set foldmethod=indent<CR> :set foldmethod=manual<CR>', opts)
+map('v', '<leader>y', '"*y', opts)
+map('v', '<leader>p', '"*p', opts)
+map('n', '<leader>zm', [[<Cmd>ZenMode<CR>]], opts)
 
 -- NERDTREE MAPPINGS
-vim.keymap.set('n', '<leader>nt', [[<Cmd>NERDTreeToggle<CR>]], opts)
-vim.keymap.set('n', '<leader>no', ':NERDTree ', opts)
-vim.keymap.set('n', '<leader>nb', ':Bookmark ', opts)
-vim.keymap.set('n', '<leader>nf', ':NERDTreeFind ', opts)
+map('n', '<leader>nt', [[<Cmd>NERDTreeToggle<CR>]], opts)
+map('n', '<leader>no', ':NERDTree ', opts)
+map('n', '<leader>nb', ':Bookmark ', opts)
+map('n', '<leader>nf', ':NERDTreeFind ', opts)
 
 -- QUICK FIX --
-vim.keymap.set('n', '<leader>co', [[<Cmd>cope<CR>]], opts)
-vim.keymap.set('n', '<leader>cc', [[<Cmd>ccl<CR>]], opts)
+map('n', '<leader>co', [[<Cmd>cope<CR>]], opts)
+map('n', '<leader>cc', [[<Cmd>ccl<CR>]], opts)
 
 -- OUTLINE TOGGLE
-vim.keymap.set('n', '<leader>out', [[<Cmd>SymbolsOutline<CR>]], opts)
+map('n', '<leader>out', [[<Cmd>SymbolsOutline<CR>]], opts)
 
 -- EXEC PYTHON
-vim.keymap.set('n', '<leader>xx', [[<Cmd>!python3 %<CR>]], opts)
+map('n', '<leader>xx', [[<Cmd>!python3 %<CR>]], opts)
 
 -- TOGGLE CMP
 -- solution in thread: https://github.com/hrsh7th/nvim-cmp/issues/261#issuecomment-1461862723
-vim.keymap.set('n', '<leader>ua', [[<Cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle; <CR>]], { desc = 'toggle nvim-cmp' })
+map('n', '<leader>ua', [[<Cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle; <CR>]], { desc = 'toggle nvim-cmp' })
 
 --TOGGLE PYTHON FORMATTING
 vim.g.pythonformatting = true
-vim.keymap.set('n', '<leader>df', [[<Cmd>lua vim.g.pythonformatting = not vim.g.pythonformatting<CR>]], { desc = 'toggle python-formatting' })
+map('n', '<leader>df', [[<Cmd>lua vim.g.pythonformatting = not vim.g.pythonformatting<CR>]], { desc = 'toggle python-formatting' })
 
 -- FUZZY FINDER -- 
 require('telescope').setup {
@@ -140,7 +152,7 @@ local lsp_flags = {
 }
 
 local lspconfig = require('lspconfig')
-local servers = { 'lua_ls', 'pyright' }
+local servers = { 'pyright', 'volar', 'lua_ls', 'tsserver', 'html' }
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- to load vs code snippets: https://github.com/L3MON4D3/LuaSnip#add-snippets
 require('luasnip.loaders.from_vscode').lazy_load()

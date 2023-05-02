@@ -3,7 +3,7 @@ local pattern_all = { "*" }
 
 -- AUTOCMD
 
--- NOTE: makes background transparent when setting color scheme
+-- NOTE: makes background transparent independent of theme
 vim.api.nvim_create_autocmd({ "ColorScheme" }, {
     pattern = pattern_all,
     command = "hi Normal ctermbg=none guibg=none"
@@ -32,4 +32,4 @@ if vim.fn.has("wsl") then
     })
 end
 
-vim.cmd "colo nord"
+vim.cmd "colo neosolarized"
