@@ -30,7 +30,7 @@ window:
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
   dimensions:
-    columns: 150
+    columns: 200
     lines: 60
 
   # Window decorations
@@ -69,8 +69,12 @@ scrolling:
 font:
   normal:
     # Font family
-    family: "Agave Nerd Font Mono"
+    # family: "Agave Nerd Font Mono"
     # family: "ShureTechMono Nerd Font"
+    # family: "CodeNewRoman Nerd Font"
+    family: "BlexMono Nerd Font"
+    # family: "Menlo"
+    # family: "Terminess Nerd Font"
     # style: Regular
 
   # Point size

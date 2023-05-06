@@ -31,6 +31,7 @@ require("lazy").setup({
     "hrsh7th/cmp-nvim-lsp",
     "folke/zen-mode.nvim",
     "rafamadriz/friendly-snippets",
+    "simrat39/symbols-outline.nvim",
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
