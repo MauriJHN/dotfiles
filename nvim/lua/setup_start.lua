@@ -7,6 +7,7 @@ vim.g.netrw_liststyle = 1 -- long.listing (one file per line)
 vim.g.netrw_fastbrowse = 2 -- efficient browsing
 vim.g.smarttab = true
 vim.g.backup = false
+vim.opt.wildoptions = 'pum'
 
 
 local scopes = { o = vim.o, b = vim.bo, w = vim.wo } -- scopes: { editor, buffer, window }
@@ -25,7 +26,7 @@ set_editor_option('o', 'splitright', true)
 set_editor_option('o', 'termguicolors', true)
 set_editor_option('w', 'number', true)
 set_editor_option('o', 'numberwidth', 2)
-set_editor_option('w', 'cul', true)
+set_editor_option('w', 'cursorline', true)
 set_editor_option('w', 'signcolumn', 'yes')
 set_editor_option('o', 'updatetime', 250)
 set_editor_option('o', 'timeoutlen', 500)
