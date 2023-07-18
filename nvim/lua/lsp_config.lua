@@ -1,11 +1,9 @@
-local lspconfig = require('lspconfig')
-local lsp_flags = { debounce_text_changes = 150 }
 local on_attach = require('_lsp_config').on_attach
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lazy-lsp').setup {
   excluded_servers = {
-    'ccls', 'zk', 'sqls', 
+    'ccls', 'zk', 'sqls',
   },
   preferred_servers = {
     python = { 'pyright' },

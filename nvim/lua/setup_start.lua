@@ -36,3 +36,5 @@ set_editor_option('b', 'expandtab', true)
 set_editor_option('b', 'smartindent', true)
 set_editor_option('o', 'completeopt', 'menuone,preview,noselect')
 set_editor_option('o', 'encoding', 'utf-8') -- for vim devicons
+set_editor_option('o', 'fileencoding', 'utf-8') -- for vim devicons
+set_editor_option('o', 'scriptencoding', 'utf-8') -- for vim devicons

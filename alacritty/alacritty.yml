@@ -14,11 +14,11 @@ window:
     y: 0
   position:
     x: 25
-    y: 25
+    y: 75
   dimensions:
     columns: 150
-    lines: 45
-  decorations: none
+    lines: 40
+  decorations: transparent
   startup_mode: Windowed
 
   opacity: 0.9
