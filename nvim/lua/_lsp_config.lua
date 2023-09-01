@@ -1,5 +1,6 @@
 local _lsp_config = {
   on_attach = function(client, bufnr)
+    print("LSP config loaded properly")
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc') -- enable completion
 
     -- see `:help vim.lsp.*`

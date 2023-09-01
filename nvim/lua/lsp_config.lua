@@ -3,10 +3,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lazy-lsp').setup {
   excluded_servers = {
-    'ccls', 'zk', 'sqls',
+    'ccls', 'zk', 'sqls', 'pyright'
   },
   preferred_servers = {
-    python = { 'pyright' },
+    python = {},
     lua = { 'lua_ls' },
     vue = { 'vuels' }
   },
@@ -36,28 +36,28 @@ require('lazy-lsp').setup {
       },
     },
 
-    pyright = {
-      cmd = { "pyright-langserver", "--stdio" },
-      root_dir = function()
-        return vim.fn.getcwd()
-      end,
-      filetypes = { "python" },
-      settings = {
-        python = {
-          analysis = {
-            autoSearchPaths = true,
-            diagnosticMode = "workspace",
-            useLibraryCodeForTypes = true,
-            venvPath = function()
-              return "./venv/"
-            end,
-            venv = "venv"
-          }
-        },
-        single_file_support = true
-      }
-    },
 
     vuels = {},
   },
+}
+
+local lspconfig = require("lspconfig")
+lspconfig.pyright.setup {
+  cmd = { "pyright-langserver", "--stdio" },
+  root_dir = function()
+    return vim.fn.getcwd()
+  end,
+  filetypes = { "python" },
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true,
+        venvPath = "./venv/",
+        venv = "venv"
+      }
+    },
+    single_file_support = true
+  }
 }
