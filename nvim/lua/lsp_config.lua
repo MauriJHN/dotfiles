@@ -43,6 +43,9 @@ require('lazy-lsp').setup {
 
 local lspconfig = require("lspconfig")
 lspconfig.pyright.setup {
+  flags = { debounce_text_changes = 150 },
+  on_attach = on_attach,
+  capabilities = capabilities,
   cmd = { "pyright-langserver", "--stdio" },
   root_dir = function()
     return vim.fn.getcwd()
