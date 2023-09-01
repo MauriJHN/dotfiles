@@ -27,12 +27,6 @@ I installed the pyright language server by running `pip install pyright`.
 
 I then removed the [`lazy-lsp`](https://github.com/dundalek/lazy-lsp.nvim) configuration and replaced it with a previous configuration that allows the servers to be installed manually.
 
-The configuration looks as follows:
-
-```lua
-
-```
-
 I am getting the following message from neovim whenever I try to open a Python file:
 
 ```log
