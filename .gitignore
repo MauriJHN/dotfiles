@@ -43,3 +43,7 @@ luac.out
 packer_compiled*
 .DS_Store
 jgit/
+
+*code-workspace
+lazy-lock.json
+tmux/plugins/
