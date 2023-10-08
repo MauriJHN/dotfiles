@@ -60,7 +60,7 @@ function fish_prompt
     set_color -o white
     echo -n @
 
-    if test -z "$SSH_CLIENT"
+    if [ -z "$SSH_CLIENT" ]
         set_color -o blue
     else
         set_color -o cyan

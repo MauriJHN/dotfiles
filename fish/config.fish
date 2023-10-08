@@ -7,6 +7,7 @@ end
 
 # alias svenv "set VIRTUAL_ENV ./venv"
 # set -g -x JAVA_HOME (/usr/libexec/java_home)
+set -g -x PATH "$PATH":/usr/local/go/bin
 
 bind \eB backward-word
 bind \eF forward-word

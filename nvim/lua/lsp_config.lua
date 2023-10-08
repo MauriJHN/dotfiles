@@ -38,6 +38,12 @@ require('lazy-lsp').setup {
 
 
     vuels = {},
+
+    gopls = {
+      root_dir = function()
+        return vim.fn.getcwd()
+      end,
+    }
   },
 }
 
