@@ -1,3 +1,7 @@
+# to ignore other files inside .config
+/**
+!/**/
+
 # Compiled Lua sources
 luac.out
 

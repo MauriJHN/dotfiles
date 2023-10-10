@@ -1,4 +1,4 @@
--- Project Link: https://github.com/folke/lazy.nvim
+-- https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
 if not vim.loop.fs_stat(lazypath) then
@@ -32,6 +32,7 @@ require('lazy').setup({
     'rafamadriz/friendly-snippets',
     'simrat39/symbols-outline.nvim',
     'vim-airline/vim-airline',
+    'norcalli/nvim-colorizer.lua',
     {
       'dundalek/lazy-lsp.nvim',
       dependencies = { 'neovim/nvim-lspconfig' }
@@ -57,3 +58,4 @@ require('lazy').setup({
         build = ':UpdateRemotePlugins'
     },
 })
+

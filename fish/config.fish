@@ -23,4 +23,3 @@ if status is-interactive
   pyenv init - | source
   pyenv virtualenv-init - | source
 end
-

@@ -33,3 +33,6 @@ if vim.fn.has("wsl") then
 end
 
 vim.cmd "colo nord"
+
+-- colorizer setup
+require'colorizer'.setup()
