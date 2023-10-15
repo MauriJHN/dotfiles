@@ -33,6 +33,7 @@ require('lazy').setup({
     'simrat39/symbols-outline.nvim',
     'vim-airline/vim-airline',
     'norcalli/nvim-colorizer.lua',
+    'github/copilot.vim',
     {
       'dundalek/lazy-lsp.nvim',
       dependencies = { 'neovim/nvim-lspconfig' }

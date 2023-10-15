@@ -1,13 +1,12 @@
 # source aliases
-# set -l alias_file "$HOME/.zsh_aliases"
-
 if test -e "$alias_file"
     source "$alias_file"
 end
 
-# alias svenv "set VIRTUAL_ENV ./venv"
-# set -g -x JAVA_HOME (/usr/libexec/java_home)
 set -g -x PATH "$PATH":/usr/local/go/bin
+set -g -x ANDROID_HOME "$HOME"/Android/Sdk/
+set -g -x PATH "$PATH":$ANDROID_HOME/emulator
+set -g -x PATH "$PATH":$ANDROID_HOME/platform-tools
 
 bind \eB backward-word
 bind \eF forward-word
@@ -19,7 +18,7 @@ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
 
 if status is-interactive
-  # enable virtualenv
+  # enable pyenv virtualenv tool
   pyenv init - | source
   pyenv virtualenv-init - | source
 end
