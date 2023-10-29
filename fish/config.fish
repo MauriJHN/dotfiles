@@ -1,9 +1,8 @@
-# source aliases
-if test -e "$alias_file"
-    source "$alias_file"
-end
+# ALIASES
+alias bat 'batcat -f --pager "less -RF"'
 
 set -g -x PATH "$PATH":/usr/local/go/bin
+set -g -x XDG_CONFIG_HOME "$HOME/.config"
 set -g -x ANDROID_HOME "$HOME"/Android/Sdk/
 set -g -x PATH "$PATH":$ANDROID_HOME/emulator
 set -g -x PATH "$PATH":$ANDROID_HOME/platform-tools
@@ -16,6 +15,10 @@ bind \eF forward-word
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
+set -gx NVM_DIR (if test -z "$XDG_CONFIG_HOME"; echo "$XDG_CONFIG_HOME/nvm"; else; echo "$HOME/.nvm"; end)
+if test -e $NVM_DIR/nvm.sh
+    source $NVM_DIR/nvm.sh
+end
 
 if status is-interactive
   # enable pyenv virtualenv tool
