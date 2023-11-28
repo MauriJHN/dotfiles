@@ -1,6 +1,7 @@
 require('setup_start')
 require('lazy_config')
 require('lsp_config')
+require('diagnostics')
 require('cmp_config')
 require('mappings')
 require('treesitter')
