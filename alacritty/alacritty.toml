@@ -7,7 +7,7 @@ args = [ "-l", "-c", "tmux attach || tmux" ]
 
 [window]
 startup_mode = "Windowed"
-opacity = 0.9
+opacity = 0.90
 
   [window.padding]
   x = 0

@@ -1,4 +1,4 @@
-# NOTE: this config was taken from the following article: https://smarttech101.com/nvim-lsp-diagnostics-keybindings-signs-virtual-texts/#severity_signs_in_nvim_lsp_diagnostics
+# https://smarttech101.com/nvim-lsp-diagnostics-keybindings-signs-virtual-texts/#severity_signs_in_nvim_lsp_diagnostics
 
 local signs = { Error = "☢ ", Warn = "⊙ ", Hint = "❂ ", Info = "⊛ " }
 
