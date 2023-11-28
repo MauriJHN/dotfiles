@@ -41,4 +41,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/mau/\x2epyenv/bin\x1e/usr/java/jdk\x2d11\x2e0\x2e20\x2e1\x2b1/bin\x1e/usr/local/bin/jdk/bin\x1e/usr/local/bin/android\x2dstudio/bin\x1e/home/mau/\x2enix\x2dprofile/bin\x1e/home/mhernan10/\x2epyenv/bin\x1e/home/mhernan10/\x2enix\x2dprofile/bin\x1e/Users/mhernan10/\x2epyenv/bin\x1e/nix/var/nix/profiles/default/bin
+SETUVAR fish_user_paths:/home/mau/\x2epyenv/bin\x1e/home/mau/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/usr/java/jdk\x2d11\x2e0\x2e20\x2e1\x2b1/bin\x1e/usr/local/bin/jdk/bin\x1e/usr/local/bin/android\x2dstudio/bin\x1e/home/mau/\x2enix\x2dprofile/bin\x1e/home/mhernan10/\x2epyenv/bin\x1e/home/mhernan10/\x2enix\x2dprofile/bin\x1e/Users/mhernan10/\x2epyenv/bin\x1e/nix/var/nix/profiles/default/bin

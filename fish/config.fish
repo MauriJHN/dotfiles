@@ -16,8 +16,8 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
 set -gx NVM_DIR (if test -z "$XDG_CONFIG_HOME"; echo "$XDG_CONFIG_HOME/nvm"; else; echo "$HOME/.nvm"; end)
-if test -e $NVM_DIR/nvm.sh
-    source $NVM_DIR/nvm.sh
+if test -e "$NVM_DIR/nvm.sh"
+    bash "$NVM_DIR/nvm.sh"
 end
 
 if status is-interactive
