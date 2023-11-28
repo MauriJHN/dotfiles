@@ -40,11 +40,6 @@ vim.keymap.set('n', '<leader>pv', [[<cmd>Sex!<CR>]], def_opts)
 vim.keymap.set('n', '<leader>ua', [[<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle; <CR>]], opts({ desc = 'toggle nvim-cmp' }))
 
 vim.g.pythonformatting = true
-vim.keymap.set(
-  'n',
-  '<leader>df', [[<cmd>lua vim.g.pythonformatting = not vim.g.pythonformatting<CR>]],
-  opts({ desc = 'toggle python-formatting' })
-)
 
 require('telescope').setup {
   defaults = {
@@ -81,3 +76,9 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, def_opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, def_opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, def_opts)
 vim.keymap.set('n', '<leader>sl', vim.diagnostic.setloclist, def_opts)
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { noremap = true, silent = true, buffer = 0 })
+vim.keymap.set('n', '<leader>dd', vim.diagnostic.disable, { noremap = true, silent = true, buffer = 0 })
+vim.keymap.set('n', '<leader>de', vim.diagnostic.enable, { noremap = true, silent = true, buffer = 0 })
+-- You can now call the command with the LSP client's name like this:
+-- :DisableLSPDiagnostics tsserver
+vim.keymap.set('n', '<leader>dl', ':DisableLSPDiagnostics ', { noremap = true, silent = false })

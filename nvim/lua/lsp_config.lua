@@ -1,5 +1,6 @@
 local on_attach = require('_lsp_config').on_attach
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require("lspconfig")
 
 require('lazy-lsp').setup {
   excluded_servers = {
@@ -43,11 +44,20 @@ require('lazy-lsp').setup {
       root_dir = function()
         return vim.fn.getcwd()
       end,
-    }
+    },
+
+    denols = {
+      root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+    },
+
+    tsserver = {
+      root_dir = lspconfig.util.root_pattern("package.json"),
+      single_file_support = false
+    },
+
   },
 }
 
-local lspconfig = require("lspconfig")
 lspconfig.pyright.setup {
   flags = { debounce_text_changes = 150 },
   on_attach = on_attach,
@@ -70,3 +80,4 @@ lspconfig.pyright.setup {
     single_file_support = true
   }
 }
+

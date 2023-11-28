@@ -15,13 +15,10 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     command = "setf groovy"
 })
 
--- NOTE: hacky format python files when writing to them
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+-- NOTE: for python linting on save
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = { "*.py" },
-    command = [[lua 
-                if vim.g.pythonformatting then
-                    vim.cmd('!python3 -m black -q %')
-                end]]
+    command = "Neomake"
 })
 
 -- use the windows clipboard when yanking to * registry ONLY in wsl
