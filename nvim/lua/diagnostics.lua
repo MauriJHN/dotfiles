@@ -13,9 +13,10 @@ vim.diagnostic.config({
   signs = true,
   underline = true,
   update_in_insert = false,
-  severity_sort = false,
+  severity_sort = true,
 })
 
+-- NOTE: this does not work for every LSP
 -- Function to disable diagnostics from a specific LSP
 local function disable_lsp_diagnostics(lsp_name)
   local clients = vim.lsp.get_active_clients()
