@@ -1,0 +1,37 @@
+import: [""]
+draw_bold_text_with_bright_colors: true
+live_config_reload: true
+shell:
+  program: "wsl -d Ubuntu-20.04"
+window:
+  decorations: "full"
+  startup_mode: "Windowed"
+  opacity: 0.9
+  padding:
+    x: 0
+    y: 0
+  position:
+    x: 10
+    y: 10
+  dimensions:
+    columns: 90
+    lines: 25
+scrolling:
+  history: 10000
+  multiplier: 10
+font:
+  size: 14
+  normal:
+    family: "Hurmit Nerd Font Mono"
+    style: Regular
+  bold:
+    family: "Hurmit Nerd Font Mono"
+    style: Bold
+  italic:
+    family: "Hurmit Nerd Font Mono"
+    style: Italic
+  glyph_offset:
+    x: 0
+    y: 0
+mouse:
+  hide_when_typing: true
