@@ -9,7 +9,6 @@ require('lazy-lsp').setup {
   preferred_servers = {
     python = {},
     lua = { 'lua_ls' },
-    vue = { 'volar' }
   },
   default_config = {
     flags = { debounce_text_changes = 150 },
@@ -38,7 +37,18 @@ require('lazy-lsp').setup {
     },
 
 
-    vuels = {},
+    volar = {
+      completion = {
+        triggerCharacters = { ".", ":", "<", ">", "/", "@" },
+      },
+      -- typescript = {
+      --   preferences = {
+      --     importModuleSpecifier = "relative",
+      --   },
+      -- },
+      filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+      root_dir = lspconfig.util.root_pattern("package.json", "vite.config.js", "vite.config.ts"),
+    },
 
     gopls = {
       root_dir = function()
@@ -80,4 +90,3 @@ lspconfig.pyright.setup {
     single_file_support = true
   }
 }
-
