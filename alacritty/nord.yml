@@ -1,6 +1,9 @@
+# Copyright (c) 2016-present Sven Greb <development@svengreb.de>
+# This source code is licensed under the MIT license found in the license file.
+
 colors:
   primary:
-    background: "#090713"
+    background: "#1b1f2c"
     foreground: "#d8dee9"
     dim_foreground: "#a5abb6"
   cursor:
@@ -16,27 +19,27 @@ colors:
     matches:
       foreground: CellBackground
       background: "#88c0d0"
-  footer_bar:
-    background: "#434c5e"
-    foreground: "#d8dee9"
+    footer_bar:
+      background: "#434c5e"
+      foreground: "#d8dee9"
   normal:
     black: "#3b4252"
     red: "#bf616a"
     green: "#a3be8c"
     yellow: "#ebcb8b"
-    blue: "#819be5"
+    blue: "#81a1c1"
     magenta: "#b48ead"
-    cyan: "#88c0ef"
-    white: "#e5e9ff"
+    cyan: "#88c0d0"
+    white: "#e5e9f0"
   bright:
     black: "#4c566a"
-    red: "#ef616a"
+    red: "#bf616a"
     green: "#a3be8c"
     yellow: "#ebcb8b"
-    blue: "#818bf5"
+    blue: "#81a1c1"
     magenta: "#b48ead"
     cyan: "#8fbcbb"
-    white: "#fcfcff"
+    white: "#eceff4"
   dim:
     black: "#373e4d"
     red: "#94545d"
