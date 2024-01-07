@@ -32,29 +32,8 @@ git clone git@github.com:MauriJHN/mauri-config.git $HOME/.config
 
 ## Installing Alacritty
 
-- Install alacritty for different platforms using [this doc](alacritty/installation.md)
-- Alacritty has a `.toml` configuration that needs to be placed in different locations depending on the platform
-
-### Alacritty Configuration - WSL
-
-For alacritty to work on Windows, copy and paste the `.toml` file from the repo location to `AppData/alacritty/` using the WSL terminal
-
-In the following commands, replace `__username__` with your Windows username.
-
-**Note**: you might need to create the directory for alacritty first:
-
-1. `mkdir /mnt/c/Users/__username__/AppData/Roaming/alacritty/` **or**
-2. In the Windows file explorer:
-   1. Type the following in the navigation bar: `%appdata%`
-   2. Create a new folder called `alacritty`
-
-```shell
-cp $HOME/.config/alacritty/alacritty.yml /mnt/c/Users/__username__/AppData/Roaming/alacritty/
-```
-
-### Alacritty Configuration - MacOS & Linux
-
-For MacOS and Linux systems, leave the configuration file under `$HOME/.config/alacritty/alacritty.toml`
+- Install alacritty for different platforms using [this doc](./alacritty/installation.md)
+- For configuration see [alacritty configuration](./alacritty/configuration.md)
 
 ## Installing Tmux
 
