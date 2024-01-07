@@ -6,12 +6,16 @@ local function opts(extra_opts)
   return vim.list_extend(def_opts, extra_opts)
 end
 
+-- Window Management
 vim.keymap.set('n', '<leader>h', [[<cmd>wincmd h<cr>]], def_opts)
 vim.keymap.set('n', '<leader>j', [[<cmd>wincmd j<cr>]], def_opts)
 vim.keymap.set('n', '<leader>k', [[<cmd>wincmd k<cr>]], def_opts)
 vim.keymap.set('n', '<leader>l', [[<cmd>wincmd l<cr>]], def_opts)
 vim.keymap.set('n', '<leader>ss', [[<cmd>split<cr>]], def_opts)
 vim.keymap.set('n', '<leader>sv', [[<cmd>vsplit<cr>]], def_opts)
+vim.keymap.set('n', '<leader>sv', [[<cmd>vsplit<cr>]], def_opts)
+vim.keymap.set('n', '<leader>tb', [[<cmd>tabnew | Telescope find_files<cr>]], def_opts)
+vim.keymap.set('n', '<leader>bd', [[<cmd>bdelete<cr>]], def_opts)
 
 vim.keymap.set('n', '<leader>y', '"*y', def_opts)
 vim.keymap.set('n', '<leader>p', '"*p', def_opts)

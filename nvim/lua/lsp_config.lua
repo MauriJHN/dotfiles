@@ -9,7 +9,7 @@ require('lazy-lsp').setup {
   preferred_servers = {
     python = {},
     lua = { 'lua_ls' },
-    vue = { 'vuels' }
+    vue = { 'volar' }
   },
   default_config = {
     flags = { debounce_text_changes = 150 },
