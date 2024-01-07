@@ -1,6 +1,10 @@
 # ALIASES
 alias bat 'batcat -f --pager "less -RF"'
 
+set -g -x DENO_INSTALL "/home/mau/.deno"
+set -g -x PATH "$PATH":"$DENO_INSTALL"/bin
+set -g -x JAVA_HOME "/usr/lib/jvm/java-17-openjdk-amd64"
+set -g -x PATH "$PATH":"$JAVA_HOME"/bin
 set -g -x PATH "$PATH":/usr/local/go/bin
 set -g -x XDG_CONFIG_HOME "$HOME/.config"
 set -g -x ANDROID_HOME "$HOME"/Android/Sdk/
