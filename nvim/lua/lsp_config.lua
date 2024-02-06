@@ -1,10 +1,11 @@
 local on_attach = require('_lsp_config').on_attach
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require("lspconfig")
+local get_typescript_server_path = require('helpers.search_ts_global')
 
 require('lazy-lsp').setup {
   excluded_servers = {
-    'ccls', 'zk', 'sqls', 'pyright'
+    'ccls', 'zk', 'sqls', 'pyright', 'vuels'
   },
   preferred_servers = {
     python = {},
@@ -36,8 +37,8 @@ require('lazy-lsp').setup {
       },
     },
 
-
     volar = {
+      cmd = { "vue-language-server", "--stdio" },
       completion = {
         triggerCharacters = { ".", ":", "<", ">", "/", "@" },
       },
@@ -46,8 +47,11 @@ require('lazy-lsp').setup {
       --     importModuleSpecifier = "relative",
       --   },
       -- },
-      filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
       root_dir = lspconfig.util.root_pattern("package.json", "vite.config.js", "vite.config.ts"),
+      on_new_config = function(new_config, new_root_dir)
+        new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+      end,
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
     },
 
     gopls = {
@@ -73,19 +77,12 @@ lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = { "pyright-langserver", "--stdio" },
-  root_dir = function()
-    return vim.fn.getcwd()
-  end,
+  root_dir = lspconfig.util.root_pattern("pyrightconfig.json", ".git"),
   filetypes = { "python" },
+  -- NOTE: commenting this out to test virtualenv definition with local config file
   settings = {
     python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = true,
-        venvPath = "./venv/",
-        venv = "venv"
-      }
+      venvPath = "/home/mau/.pyenv/versions/3.10.13/envs",
     },
     single_file_support = true
   }

@@ -3,19 +3,25 @@ local pattern_all = { "*" }
 
 -- AUTOCMD
 
--- NOTE: makes background transparent when setting color scheme
+-- makes background transparent when setting color scheme
 vim.api.nvim_create_autocmd({ "ColorScheme" }, {
     pattern = pattern_all,
     command = "hi Normal ctermbg=none guibg=none"
 })
 
--- NOTE: bind Jenkinsfiles to groovy syntax
+-- bind Jenkinsfiles to groovy syntax
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "Jenkinsfile", "Jenkinsfile_dev" },
     command = "setf groovy"
 })
 
--- NOTE: for python linting on save
+-- bind .pylintrc to toml syntax
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = ".pylintrc",
+    command = "setf toml"
+})
+
+-- for python linting on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = { "*.py" },
     command = "Neomake"
