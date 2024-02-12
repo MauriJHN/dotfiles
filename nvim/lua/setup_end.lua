@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 
 -- bind .pylintrc to toml syntax
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = ".pylintrc",
+    pattern = { ".pylintrc" },
     command = "setf toml"
 })
 

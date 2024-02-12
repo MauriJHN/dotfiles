@@ -11,9 +11,9 @@ require('zen-mode').setup{
     -- uncomment any of the options below, or add other vim.wo options you want to apply
     options = {
       -- signcolumn = "no", -- disable signcolumn
-      -- number = false, -- disable number column
+      number = false, -- disable number column
       -- relativenumber = false, -- disable relative numbers
-      -- cursorline = false, -- disable cursorline
+      cursorline = false, -- disable cursorline
       -- cursorcolumn = false, -- disable cursor column
       -- foldcolumn = "0", -- disable fold column
       -- list = false, -- disable whitespace characters
@@ -43,7 +43,7 @@ require('zen-mode').setup{
     -- uses `alacritty msg` subcommand to change font size
     alacritty = {
       enabled = false,
-      font = "14", -- font size
+      font = "20", -- font size
     },
   },
   -- callback where you can add custom code when the Zen window opens

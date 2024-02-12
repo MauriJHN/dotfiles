@@ -7,6 +7,7 @@ vim.g.netrw_liststyle = 1 -- long.listing (one file per line)
 vim.g.netrw_fastbrowse = 2 -- efficient browsing
 vim.g.smarttab = true
 vim.g.backup = false
+-- vim.g.black_use_virtualenv = 0
 vim.g.neomake_python_enabled_makers = {'pylint', 'black'}
 vim.g.neomake_python_black_args = {'--line-length', '120'}
 vim.opt.wildoptions = 'pum'

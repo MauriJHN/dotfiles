@@ -35,6 +35,10 @@ require('lazy').setup({
   'norcalli/nvim-colorizer.lua',
   'neomake/neomake',
   'github/copilot.vim',
+  -- {
+  --   'psf/black',
+  --   branch = 'stable',
+  -- },
   {
     'dundalek/lazy-lsp.nvim',
     dependencies = { 'neovim/nvim-lspconfig' }
