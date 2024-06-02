@@ -33,16 +33,8 @@ require('lazy').setup({
   'simrat39/symbols-outline.nvim',
   'vim-airline/vim-airline',
   'norcalli/nvim-colorizer.lua',
-  'neomake/neomake',
   'github/copilot.vim',
-  -- {
-  --   'psf/black',
-  --   branch = 'stable',
-  -- },
-  {
-    'dundalek/lazy-lsp.nvim',
-    dependencies = { 'neovim/nvim-lspconfig' }
-  },
+  'neovim/nvim-lspconfig',
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',

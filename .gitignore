@@ -51,3 +51,4 @@ jgit/
 *code-workspace
 lazy-lock.json
 tmux/plugins/
+fish/aliases.fish

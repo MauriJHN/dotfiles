@@ -30,12 +30,13 @@ vim.keymap.set('n', '<leader>no', ':NERDTree ', def_opts)
 vim.keymap.set('n', '<leader>nb', ':Bookmark ', def_opts)
 vim.keymap.set('n', '<leader>nf', ':NERDTreeFind ', def_opts)
 
+-- quickfix
 vim.keymap.set('n', '<leader>co', [[<cmd>cope<CR>]], def_opts)
 vim.keymap.set('n', '<leader>cc', [[<cmd>ccl<CR>]], def_opts)
 
 -- custom
 vim.keymap.set('n', '<leader>out', [[<cmd>SymbolsOutline<CR>]], def_opts) -- outline toggle
-vim.keymap.set('n', '<leader>xx', [[<cmd>!python3 %<CR>]], def_opts) -- exec python
+vim.keymap.set('n', '<leader>xx', [[<cmd>!python %<CR>]], def_opts) -- exec python
 vim.keymap.set('n', '<leader>zm', [[<cmd>ZenMode<CR>]], def_opts)
 vim.keymap.set('n', '<leader>tt', [[<cmd>split term://zsh<CR>]], def_opts)
 vim.keymap.set('n', '<leader>tv', [[<cmd>vsplit term://zsh<CR>]], def_opts)
