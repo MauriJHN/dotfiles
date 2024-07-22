@@ -1,6 +1,7 @@
 -- https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
+-- Install lazy.nvim if it doesn't exist
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     'git',
@@ -42,7 +43,7 @@ require('lazy').setup({
   },
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
+    tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   {

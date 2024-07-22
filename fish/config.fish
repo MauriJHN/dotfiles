@@ -1,4 +1,5 @@
 # ALIASES
+alias sfish 'source ~/.config/fish/config.fish'
 alias bat 'batcat -f --pager "less -RF"'
 
 set -g -x DENO_INSTALL "/home/mau/.deno"
@@ -19,7 +20,7 @@ bind \eF forward-word
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
-set -gx NVM_DIR (if test -z "$XDG_CONFIG_HOME"; echo "$XDG_CONFIG_HOME/nvm"; else; echo "$HOME/.nvm"; end)
+set -gx NVM_DIR (if test -e "$XDG_CONFIG_HOME"; echo "$XDG_CONFIG_HOME/nvm"; else; echo "$HOME/.nvm"; end)
 if test -e "$NVM_DIR/nvm.sh"
     bash "$NVM_DIR/nvm.sh"
 end

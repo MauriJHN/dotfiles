@@ -1,5 +1,8 @@
 vim.g.NERDTreeShowHidden = 1
 vim.g.NERDTreeMinimalMenu = 1
+vim.g.NERDTreeDirArrowExpandable = ' '
+vim.g.NERDTreeDirArrowCollapsible = ' '
+
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_browse_split = 4
@@ -35,7 +38,7 @@ set_editor_option('b', 'tabstop', 2)
 set_editor_option('b', 'expandtab', true)
 set_editor_option('b', 'smartindent', true)
 set_editor_option('o', 'completeopt', 'menuone,preview,noselect')
-set_editor_option('o', 'encoding', 'utf-8') -- for vim devicons
-set_editor_option('o', 'fileencoding', 'utf-8') -- for vim devicons
-set_editor_option('o', 'scriptencoding', 'utf-8') -- for vim devicons
+set_editor_option('o', 'encoding', 'UTF-8') -- for vim devicons
+set_editor_option('o', 'fileencoding', 'UTF-8') -- for vim devicons
+--set_editor_option('o', 'scriptencoding', 'utf-8') -- for vim devicons
 set_editor_option('o', 'wrap', false) -- for vim devicons

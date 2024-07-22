@@ -21,7 +21,6 @@ vim.keymap.set('n', '<leader>y', '"*y', def_opts)
 vim.keymap.set('n', '<leader>p', '"*p', def_opts)
 vim.keymap.set('n', '<leader>Y', 'gg"*yG', def_opts)
 vim.keymap.set('n', '<leader>sc', [[<cmd>let @/=''<CR>]], def_opts)
-vim.keymap.set('n', '<leader>ff', ':set foldmethod=indent<CR> :set foldmethod=manual<CR>', def_opts)
 vim.keymap.set('v', '<leader>y', '"*y', def_opts)
 vim.keymap.set('v', '<leader>p', '"*p', def_opts)
 
@@ -87,3 +86,6 @@ vim.keymap.set('n', '<leader>de', vim.diagnostic.enable, { noremap = true, silen
 -- You can now call the command with the LSP client's name like this:
 -- :DisableLSPDiagnostics tsserver
 vim.keymap.set('n', '<leader>dl', ':DisableLSPDiagnostics ', { noremap = true, silent = false })
+
+-- reload icons
+vim.keymap.set('n', '<space>ir', vim.fn['webdevicons#refresh'], def_opts)

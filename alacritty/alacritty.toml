@@ -1,5 +1,5 @@
 # replace this with correct path
-import = ["/home/mau/.config/alacritty/nord.toml"]
+import = ["~/.config/alacritty/nord.toml"]
 live_config_reload = true
 
 [shell]
@@ -30,7 +30,7 @@ multiplier = 10
 size = 16
 
 [font.normal]
-family = "ShureTechMono Nerd Font"
+family = "UbuntuMono Nerd Font Mono"
 
 [font.glyph_offset]
 x = 0

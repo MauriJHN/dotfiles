@@ -43,3 +43,7 @@ vim.cmd("color nord")
 
 -- colorizer setup
 require'colorizer'.setup()
+
+vim.api.nvim_set_keymap('n', '<leader>po', ':PeekOpen<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>pc', ':PeekClose<CR>', { noremap = true, silent = true })
+

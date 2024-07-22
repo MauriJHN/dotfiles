@@ -15,4 +15,4 @@
    chsh -s $(which fish)
    ```
 
-3. Make sure to handle the exports inside `$HOME/.config/fish.config.fish` by installing all the required packages and setting their location respectively
+3. Make sure to handle the exports inside `$HOME/.config/config.fish` by installing all the required packages and setting their location respectively

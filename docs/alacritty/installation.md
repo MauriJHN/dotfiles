@@ -9,8 +9,16 @@ This document contains instructions on the complete setup for alacritty on diffe
 
 ## Linux (Debian)
 
-Install alacritty using the online guide: [installing alacritty using cargo](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#cargo-installation)
+### Installing Cargo
 
-## Configuration
+Install cargo using the following guide: [install cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
-For a guide on how to configure alacritty see [configuration.md](./configuration.md)
+### Install Alacritty
+
+_Notes:_
+
+- Installation guide: [installing alacritty using cargo](https://github.com/alacritty/alacritty/blob/master/INSTALL.md#cargo-installation)
+- Do not install alacritty using: `cargo install alacritty`
+- Build from source using the guide below
+  - See `Building` section in guide
+  - Make sure to configure entry icon and any other post-build features
