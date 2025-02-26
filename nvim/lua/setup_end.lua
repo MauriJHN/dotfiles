@@ -22,22 +22,22 @@ if vim.fn.has("wsl") then
     })
 end
 
--- disable copilot on open
-function toggle_copilot()
-  vim.cmd("let b:copilot_enabled = get(b:, 'copilot_enabled', v:false) ? v:false : v:true")
-  if vim.b.copilot_enabled then
-    print("Copilot enabled")
+-- do the same for codeium
+function toggle_codeium()
+  vim.cmd("let b:codeium_enabled = get(b:, 'codeium_enabled', v:false) ? v:false : v:true")
+  if vim.b.codeium_enabled then
+    print("Codeium enabled")
   else
-    print("Copilot disabled")
+    print("Codeium disabled")
   end
 end
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = "*",
-    command = "let b:copilot_enabled = v:false"
+    command = "let b:codeium_enabled = v:false"
 })
 
-vim.keymap.set('n', '<leader>cp', [[<cmd>lua toggle_copilot()<CR>]], def_opts)
+vim.keymap.set('n', '<leader>cp', [[<cmd>lua toggle_codeium()<CR>]], def_opts)
 
 vim.cmd("color nord")
 

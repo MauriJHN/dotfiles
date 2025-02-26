@@ -9,3 +9,7 @@ require('zen_mode')
 require('python')
 require('setup_end')
 require('highlights')
+
+-- init.lua
+vim.cmd("colorscheme mau_theme")
+

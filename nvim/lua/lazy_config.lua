@@ -34,7 +34,6 @@ require('lazy').setup({
   'simrat39/symbols-outline.nvim',
   'vim-airline/vim-airline',
   'norcalli/nvim-colorizer.lua',
-  'github/copilot.vim',
   'neovim/nvim-lspconfig',
   {
     'nvim-treesitter/nvim-treesitter',
@@ -63,10 +62,16 @@ require('lazy').setup({
     event = { "VeryLazy" },
     build = "deno task --quiet build:fast",
     config = function()
-      require("peek").setup()
+      require("peek").setup({
+        app = 'browser'
+      })
       -- refer to `configuration to change defaults`
       vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
       vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
     end,
+  },
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter'
   },
 })

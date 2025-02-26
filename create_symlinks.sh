@@ -44,6 +44,7 @@ create_symlink "$DOTFILES_DIR/nvim/init.lua" ~/.config/nvim/init.lua
 
 # Create symlinks for Neovim additional configurations, if they exist
 create_symlink "$DOTFILES_DIR/nvim/lua" ~/.config/nvim/lua
+create_symlink "$DOTFILES_DIR/nvim/colors" ~/.config/nvim/colors
 create_symlink "$DOTFILES_DIR/nvim/after/plugin" ~/.config/nvim/after/plugin
 
 # Fish
