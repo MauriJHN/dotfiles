@@ -1,0 +1,42 @@
+# My Custom Nord Alacritty Theme
+# Bluer accents with a slightly darker background
+
+[colors]
+
+# Default colors
+[colors.primary]
+foreground = '#D8DEE9'  # Light foreground (nord4)
+background = '#0a1b24'
+
+
+# Normal colors
+[colors.normal]
+black   = '#2c313c'     # Slightly darker black (nord1)
+red     = '#BF616A'     # Aurora Red (nord11)
+green   = '#A3BE8C'     # Aurora Green (nord14)
+yellow  = '#EBCB8B'     # Aurora Yellow (nord13)
+blue    = '#368adf'     # Bluer Blue (modified nord9)
+magenta = '#B48EAD'     # Aurora Purple (nord15)
+cyan    = '#8FBCBB'     # Frost Cyan (nord7)
+white   = '#ECEFF4'     # Lightest foreground (nord6)
+
+# Bright colors
+[colors.bright]
+black   = '#3B4252'     # Polar Night (nord2)
+red     = '#BF616A'     # Aurora Red (nord11)
+green   = '#A3BE8C'     # Aurora Green (nord14)
+yellow  = '#EBCB8B'     # Aurora Yellow (nord13)
+blue    = '#4FA3F7'     # Bluer Bright Blue (modified nord8)
+magenta = '#B48EAD'     # Aurora Purple (nord15)
+cyan    = '#88C0D0'     # Frost Light Cyan (nord8)
+white   = '#E5E9F0'     # Lighter foreground (nord5)
+
+# Cursor and selection colors
+[colors.cursor]
+text   = '#252a34'      # Background color for text under cursor
+cursor = '#4FA3F7'      # Cursor color (matches bluer bright blue)
+
+[colors.selection]
+text       = '#ECEFF4'  # Selected text color
+background = '#3B4252'  # Selection background (slightly lighter than the background)
+
